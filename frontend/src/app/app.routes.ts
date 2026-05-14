@@ -1,15 +1,25 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { AlumnosComponent } from './components/alumnos/alumnos.component';
-import { ProfesoresComponent } from './components/profesores/profesores.component';
-import { AsignaturasComponent } from './components/asignaturas/asignaturas.component';
-import { MatriculasComponent } from './components/matriculas/matriculas.component';
+import { AlumnoDetail } from '../components/alumno-detail/alumno-detail';
+import { Alumnos } from '../components/alumnos/alumnos';
+import { AsignaturaDetail } from '../components/asignatura-detail/asignatura-detail';
+import { Asignaturas } from '../components/asignaturas/asignaturas';
+import { Landing } from '../components/landing/landing';
+import { MatriculaDetail } from '../components/matricula-detail/matricula-detail';
+import { Matriculas } from '../components/matriculas/matriculas';
+import { ProfesorDetail } from '../components/profesor-detail/profesor-detail';
+import { Profesores } from '../components/profesores/profesores';
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'alumnos', component: AlumnosComponent },
-  { path: 'profesores', component: ProfesoresComponent },
-  { path: 'asignaturas', component: AsignaturasComponent },
-  { path: 'matriculas', component: MatriculasComponent },
-  { path: '**', redirectTo: '' }
+
+    {path: '', component: Landing},
+    {path: 'inicio', component: Landing},
+    {path: 'alumnos', component: Alumnos},
+    {path: 'profesores', component: Profesores},
+    {path: 'asignaturas', component: Asignaturas},
+    {path: 'matriculas', component: Matriculas},
+    {path: 'matricula/:id', component: MatriculaDetail},
+    {path: 'profesor/:id', component: ProfesorDetail},
+    {path: 'asignatura/:id', component: AsignaturaDetail},
+    {path: 'alumno/:id', component: AlumnoDetail}
+    
 ];
